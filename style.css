@@ -65,7 +65,7 @@ body {
 }
 
 .container {
-  height: 100svh;
+  min-height: 100svh;
 }
 
 header {
