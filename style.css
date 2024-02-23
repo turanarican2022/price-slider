@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /**********/
+  /* COLORS */
+  /**********/
+
+  /* Primary */
+  --soft-cyan: hsl(174, 77%, 80%); /* (Full Slider Bar) */
+  --strong-cyan: hsl(174, 86%, 45%); /* (Slider Backround) */
+  --light-grayish-red: hsl(14, 92%, 95%); /* (Discount Background) */
+  --light-red: hsl(15, 100%, 70%); /* (Discount Text) */
+  --pale-blue: hsl(226, 100%, 87%); /* (CTA Text) */
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%); /* (Pricing Component Background) */
+  --very-pale-blue: hsl(230, 100%, 99%); /* (Main Background) */
+  --light-grayish-blue-1: hsl(226, 68%, 95%); /* (Empty Slider Bar) */
+  --light-grayish-blue-2: hsl(223, 48%, 87%); /* (Toggle Background) */
+  --grayish-blue: hsl(225, 20%, 60%); /* (Text) */
+  --dark-saturated-blue: hsl(227, 35%, 25%); /* (Text & CTA Background) */
+}
+
+body {
+  /********/
+  /* FONT */
+  /********/
+
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  background-color: var(--very-pale-blue);
+}
+
+.flex-column-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-48 {
+  gap: 48px;
+}
+
+.gap-36 {
+  gap: 36px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-6 {
+  gap: 6px;
+}
+
+.container {
+  height: 100svh;
+}
+
+header {
+  max-width: 90%;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--dark-saturated-blue);
+  font-weight: 800;
+  font-size: 36px;
+}
+
+header p {
+  color: var(--grayish-blue);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+main {
+  width: 90%;
+  max-width: 768px;
+  background-color: var(--white);
+  box-shadow: 0 0 12px rgba(185, 185, 185, 0.5);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing {
+  padding: 24px 36px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "pageviews price"
+    "slider slider"
+    "billing billing";
+}
+
+.pageviews {
+  grid-area: pageviews;
+  justify-self: start;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: var(--grayish-blue);
+}
+
+.price {
+  grid-area: price;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+}
+
+.dollar-sign,
+.amount {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--dark-saturated-blue);
+}
+
+.month {
+  color: var(--grayish-blue);
+  font-weight: 600;
+}
+
+.slider {
+  grid-area: slider;
+  width: 100%;
+}
+
+.billing {
+  grid-area: billing;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  justify-items: center;
+  color: var(--grayish-blue);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.billing-left {
+  justify-self: end;
+  text-align: right;
+}
+
+.billing-right {
+  justify-self: start;
+  text-align: left;
+  display: flex;
+}
+
+.billing-right::after {
+  content: "25% discount";
+  font-size: 12px;
+  color: var(--light-red);
+  background-color: var(--light-grayish-red);
+  padding: 4px 8px;
+  border-radius: 50px;
+}
+
+.features-and-cta {
+  border-top: 1px solid var(--light-grayish-blue-1);
+  padding: 24px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.features {
+  color: var(--grayish-blue);
+  font-weight: 600;
+}
+
+.features ul li {
+  line-height: 1.6;
+  list-style-position: inside;
+  list-style-image: url("/images/icon-check.svg");
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  color: var(--light-grayish-blue-1);
+  font-weight: 600;
+  background-color: var(--dark-saturated-blue);
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  color: var(--white);
+  box-shadow: 0 0 0 8px rgba(16, 213, 193, 0.3);
+}
+
+.btn:active {
+  box-shadow: 0 0 0 4px rgba(133, 143, 173, 0.3);
+  transform: translateY(20px);
+}
+
+@media (max-width: 600px) {
+  .pricing {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "pageviews"
+      "slider"
+      "price"
+      "billing";
+  }
+  .pageviews {
+    justify-self: unset;
+  }
+  .price {
+    justify-self: unset;
+  }
+  .billing-right {
+    flex-direction: column;
+  }
+  .billing-right::after {
+    content: "save 25%";
+  }
+}
+
+@media (max-width: 500px) {
+  .features-and-cta {
+    flex-direction: column;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

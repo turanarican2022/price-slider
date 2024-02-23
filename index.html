@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="range-slider.css" />
+    <link rel="stylesheet" href="flip-switch.css" />
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <div class="container flex-column-centered gap-48">
+      <header class="flex-column-centered gap-12">
+        <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </header>
+      <main class="gap-12">
+        <div class="pricing gap-24">
+          <div class="pageviews">
+            <span id="pageviews">100</span>K Pageviews
+          </div>
+          <div class="price gap-6">
+            <span class="dollar-sign">$</span><span class="amount">16.00</span
+            ><span class="month">/month</span>
+          </div>
+          <div class="slider">
+            <input type="range" id="price-range" min="0" max="200" step="1" />
+          </div>
+          <div class="billing gap-6">
+            <span class="billing-left">Monthly Billing</span>
+            <span class="switch"
+              ><div class="flipswitch">
+                <input
+                  type="checkbox"
+                  name="flipswitch"
+                  class="flipswitch-cb"
+                  id="fs"
+                  checked
+                />
+                <label class="flipswitch-label" for="fs">
+                  <div class="flipswitch-inner"></div>
+                  <div class="flipswitch-switch"></div>
+                </label></div
+            ></span>
+            <span class="billing-right gap-6">Yearly Billing</span>
+          </div>
+        </div>
+        <div class="features-and-cta gap-24">
+          <div class="features">
+            <ul>
+              <li>Unlimited websites</li>
+              <li>100% data ownership</li>
+              <li>E-mail reports</li>
+            </ul>
+          </div>
+          <div class="cta"><a href="#" class="btn">Start my trial</a></div>
+        </div>
+      </main>
+
+      <footer class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Halit Turan ARICAN</a>.
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
